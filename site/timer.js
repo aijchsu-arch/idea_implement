@@ -18,7 +18,7 @@ export function createTimer() {
 
   function nextPhase() {
     if (phase !== "focus") return "focus";
-    return completedFocusSessions > 0 && completedFocusSessions % 4 === 0 ? "longBreak" : "shortBreak";
+    return completedFocusSessions % 4 === 0 ? "longBreak" : "shortBreak";
   }
 
   return {

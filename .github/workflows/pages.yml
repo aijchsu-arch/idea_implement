@@ -6,12 +6,10 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -27,6 +25,9 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
