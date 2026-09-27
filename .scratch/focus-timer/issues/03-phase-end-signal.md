@@ -4,8 +4,8 @@
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] A beep plays once when a Phase runs out (not on Skip)
-- [ ] The tab title announces the end ("⏰ 時間到") until the next Start
-- [ ] No permission prompts
+- [x] A beep plays once when a Phase runs out (not on Skip)
+- [x] The tab title announces the end ("⏰ 時間到") until the next Start
+- [x] No permission prompts
