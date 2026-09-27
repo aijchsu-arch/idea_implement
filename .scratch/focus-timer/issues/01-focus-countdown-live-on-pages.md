@@ -4,10 +4,10 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] A fresh page shows "專注" and 25:00, paused
-- [ ] Start counts down; Pause holds the remaining time; Start resumes it
-- [ ] Remaining time is derived from the end time, not from counting ticks (tested with an injected clock)
-- [ ] The tab title shows the remaining time while running
-- [ ] A CI workflow runs `npm test` on PRs and pushes; on main it deploys the site to Pages
+- [x] A fresh page shows "專注" and 25:00, paused
+- [x] Start counts down; Pause holds the remaining time; Start resumes it
+- [x] Remaining time is derived from the end time, not from counting ticks (tested with an injected clock)
+- [x] The tab title shows the remaining time while running
+- [x] A CI workflow runs `npm test` on PRs and pushes; on main it deploys the site to Pages
