@@ -39,7 +39,7 @@ A single static web page, served from GitHub Pages, that runs the classic rhythm
   - `tick(now)`, which advances to the next Phase (paused) when time has run out and reports whether a Phase just ended
   - a snapshot read of the current Phase, the remaining milliseconds, whether it is running, and the Completed Focus Session count
 - Remaining time is derived from a stored end time (`endsAt − now`) while running and a stored remaining duration while paused, never from counting ticks (grill Q7).
-- Phase order: after a Completed Focus Session, if the count is a multiple of 4, load a Long Break, otherwise a Short Break. After any break, load a Focus Session. Skip applies the same order but never increments the count.
+- Phase order: after a Completed Focus Session, if the count is a multiple of 4, load a Long Break, otherwise a Short Break. After any break, load a Focus Session. Skip never increments the count: skipping a Focus Session always loads a Short Break (even when the count is a multiple of 4), and skipping a break loads a Focus Session.
 - **UI adapter**: a thin module that owns the DOM, calls `tick(Date.now())` on an interval, renders the snapshot, updates `document.title`, and plays a beep through Web Audio when a Phase ends. It holds no rhythm logic.
 - Durations are fixed constants (25/5/15 minutes). No settings and no persistence.
 - Deployment: a GitHub Actions workflow runs the tests on every PR and push. On push to main it also publishes the static site directory to GitHub Pages (ADR-0001).
